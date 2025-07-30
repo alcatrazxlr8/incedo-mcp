@@ -3,3 +3,4 @@ mcp-toolbox/README.md
 mcp-toolbox/toolbox.exe
 prompts.txt
 __pycache__
+.venv
