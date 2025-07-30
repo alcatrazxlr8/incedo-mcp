@@ -1,0 +1,20 @@
+
+sources:
+  my-sqlite-memory-db:
+    kind: "sqlite"
+    database: ":memory:"
+tools:
+  initialize-database:
+    kind: "sqlite-sql"
+    source: "my-sqlite-memory-db"
+    description: "Initializes the database by creating the hotels table and inserting data."
+    statement: "CREATE TABLE hotels (name TEXT, city TEXT); INSERT INTO hotels (name, city) VALUES ('The Grand Hotel', 'New York'), ('The Plaza', 'New York'), ('The Ritz', 'Paris');"
+  search-hotels-by-city:
+    kind: "sqlite-sql"
+    source: "my-sqlite-memory-db"
+    description: "Search for hotels in a specific city."
+    parameters:
+      - name: "city"
+        type: "string"
+        description: "The city to search for hotels in."
+    statement: "SELECT * FROM hotels WHERE city = ?;"

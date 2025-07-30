@@ -12,11 +12,11 @@ The primary goal is to set up a minimal, working example of the MCP Toolbox. Thi
 
 ## Current Status
 
-- The `genai-toolbox` directory contains the pre-compiled binary for the MCP Toolbox server (`toolbox.exe`) and its configuration file (`tools.yaml`).
-- The `tools.yaml` file defines an in-memory SQLite database with a `hotels` table and two tools:
-    - `initialize-database`: Creates the `hotels` table and populates it with sample data.
-    - `search-hotels-by-city`: Queries the `hotels` table for hotels in a specific city.
-- The `test_toolbox.py` script is a Python client that connects to the server, initializes the database, and runs a test query.
+-   The `genai-toolbox` directory contains the pre-compiled binary for the MCP Toolbox server (`toolbox.exe`) and its configuration file (`tools.yaml`).
+-   The `tools.yaml` file defines an in-memory SQLite database with a `hotels` table and two tools:
+    -   `initialize-database`: Creates the `hotels` table and populates it with sample data.
+    -   `search-hotels-by-city`: Queries the `hotels` table for hotels in a specific city.
+-   The `test_toolbox.py` script is a Python client that connects to the server, initializes the database, and runs a test query.
 
 ## How to Run
 
@@ -25,6 +25,8 @@ The primary goal is to set up a minimal, working example of the MCP Toolbox. Thi
     Open a terminal, navigate to the `genai-toolbox` directory, and run the following command:
 
     ```shell
+    curl -o toolbox.exe https://storage.googleapis.com/genai-toolbox/v0.10.0/windows/amd64/toolbox.exe ## in "mcp-toolbox"
+
     .\toolbox.exe --tools-file tools.yaml
     ```
 
