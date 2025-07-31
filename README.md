@@ -16,7 +16,7 @@ The primary goal is to set up a minimal, working example of the MCP Toolbox. Thi
 -   The `tools.yaml` file defines an in-memory SQLite database with a `hotels` table and two tools:
     -   `initialize-database`: Creates the `hotels` table and populates it with sample data.
     -   `search-hotels-by-city`: Queries the `hotels` table for hotels in a specific city.
--   The `test_toolbox.py` script is a Python client that connects to the server, initializes the database, and runs a test query.
+-   The `test_toolbox.py` script is an interactive Python client that connects to the server, initializes the database, and prompts the user for a city to search for. It then prints the results of the query.
 
 ## How to Run
 

@@ -1,7 +1,7 @@
-
 import asyncio
 import subprocess
 import sys
+import json
 
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
@@ -31,13 +31,25 @@ async def main():
                     # If it's a different error, we should raise it
                     raise e
 
+            # Get user input for the city
+            city_to_search = input("Please enter a city to search for hotels (e.g., New York, Paris): ")
+
             # The tool name is "search-hotels-by-city"
             tool = await client.load_tool("search-hotels-by-city")
             
             # The parameter name is "city"
-            result = await tool(city="New York")
-            print("Successfully ran the tool. Result:")
-            print(result)
+            json_result = await tool(city=city_to_search)
+
+            # Parse the JSON string result into a Python list
+            result = json.loads(json_result)
+            
+            print(f"\n--- Search Results for '{city_to_search}' ---")
+            if result:
+                for hotel in result:
+                    print(f"- {hotel['name']}")
+            else:
+                print("No hotels found.")
+            print("------------------------------------")
         except Exception as e:
             print(f"An error occurred: {e}")
 
