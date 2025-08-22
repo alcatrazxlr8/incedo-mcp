@@ -12,7 +12,7 @@ The primary goal is to set up a minimal, working example of the MCP Toolbox. Thi
 
 ## Current Status
 
--   The `genai-toolbox` directory contains the pre-compiled binary for the MCP Toolbox server (`toolbox.exe`) and its configuration file (`tools.yaml`).
+-   The `genai-toolbox` directory should contain the pre-compiled binary for the MCP Toolbox server (`toolbox.exe`) [you can find the instructions to download it from https://googleapis.github.io/genai-toolbox/getting-started/introduction/] and its configuration file (`tools.yaml`).
 -   The `tools.yaml` file defines an in-memory SQLite database with a `hotels` table and two tools:
     -   `initialize-database`: Creates the `hotels` table and populates it with sample data.
     -   `search-hotels-by-city`: Queries the `hotels` table for hotels in a specific city.
